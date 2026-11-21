@@ -20,7 +20,6 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/recruiter")
-@PreAuthorize("hasAnyRole('RECRUITER', 'ADMIN')")
 public class RecruiterController {
 
     private final DashboardAnalyticsService analyticsService;
@@ -42,6 +41,7 @@ public class RecruiterController {
     }
 
     @GetMapping("/dashboard")
+    @PreAuthorize("hasAnyRole('RECRUITER', 'ADMIN')")
     public ResponseEntity<Map<String, Object>> getDashboard(Authentication authentication) {
         Claims claims = (Claims) authentication.getDetails();
         Long userId = claims.get("userId", Long.class);
@@ -51,6 +51,7 @@ public class RecruiterController {
     }
 
     @GetMapping("/candidates")
+    @PreAuthorize("hasAnyRole('RECRUITER', 'ADMIN')")
     public ResponseEntity<List<ApplicationDtos.ApplicationResponse>> getCandidates(Authentication authentication) {
         Claims claims = (Claims) authentication.getDetails();
         Long userId = claims.get("userId", Long.class);

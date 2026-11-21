@@ -27,7 +27,7 @@ public class EmailNotificationService {
 
     @Async
     public void sendRegistrationOtp(String toEmail, String otpCode) {
-        String subject = "HireSmart AI — Verification Code";
+        String subject = "HireSmart AI - Verification Code";
         String content = "Welcome to HireSmart AI!\n\nYour one-time verification code is: " + otpCode +
                          "\n\nThis code will expire in 15 minutes. Please enter it to activate your account." +
                          "\n\nIf you did not request this, please ignore this email.";
@@ -39,7 +39,7 @@ public class EmailNotificationService {
 
     @Async
     public void sendPasswordResetOtp(String toEmail, String otpCode) {
-        String subject = "HireSmart AI — Password Reset Code";
+        String subject = "HireSmart AI - Password Reset Code";
         String content = "You requested a password reset for your HireSmart AI account.\n\n" +
                          "Your password reset code is: " + otpCode +
                          "\n\nThis code will expire in 15 minutes." +
@@ -52,7 +52,7 @@ public class EmailNotificationService {
 
     @Async
     public void sendInterviewInvitation(String toEmail, String candidateName, String jobTitle, String scheduledTime, String meetingLink) {
-        String subject = "Interview Scheduled — " + jobTitle + " at HireSmart AI";
+        String subject = "Interview Scheduled - " + jobTitle + " at HireSmart AI";
         String content = "Hello " + candidateName + ",\n\nCongratulations! You have been selected for an interview for the position: " +
                          jobTitle + ".\n\nDate & Time: " + scheduledTime +
                          "\nMeeting Room Link: " + meetingLink +
@@ -123,7 +123,7 @@ public class EmailNotificationService {
 
     @Async
     public void sendApplicationStatusUpdate(String toEmail, String candidateName, String jobTitle, String newStatus) {
-        String subject = "Application Status Update — " + jobTitle;
+        String subject = "Application Status Update - " + jobTitle;
         String content = "Hello " + candidateName + ",\n\nYour application status for '" + jobTitle +
                          "' has been updated to: " + newStatus +
                          ".\n\nLog in to your candidate dashboard to view detailed feedback and next steps.\n\nBest regards,\nHireSmart AI";
