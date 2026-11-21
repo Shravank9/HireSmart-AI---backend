@@ -15,7 +15,7 @@ public class EmailNotificationService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${spring.mail.from:${spring.mail.username:konakalla.akash1@gmail.com}}")
+    @Value("${spring.mail.from:${spring.mail.username:vamshiambatipudi@gmail.com}}")
     private String fromEmail;
 
     @Value("${spring.mail.from-name:HireSmart AI}")
